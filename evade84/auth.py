@@ -1,4 +1,4 @@
-class SignatureAuthorizationCredentials:
+class SignatureCredentials:
     uuid: str
     key: str
 

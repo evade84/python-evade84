@@ -1,4 +1,4 @@
-from typing import Any, Dict, List, NoReturn, Optional, Union
+from typing import Any, Dict, NoReturn, Optional, Union
 
 import requests
 
@@ -63,7 +63,7 @@ class Client:
         description: Optional[str] = None,
         public: Optional[bool] = None,
         encrypted: Optional[bool] = None,
-        creator_signature: Optional[auth.SignatureAuthorization] = None,
+        creator_signature: Optional[auth.SignatureCredentials] = None,
         writer_key: Optional[str] = None,
         reader_key: Optional[str] = None,
     ) -> models.Pool:
@@ -157,7 +157,7 @@ class Client:
         identifier: str,
         writer_key: str,
         message_type: enums.MessageType,
-        signature: Optional[auth.SignatureAuthorization] = None,
+        signature: Optional[auth.SignatureCredentials] = None,
         plaintext: Optional[str] = None,
         AES_ciphertext: Optional[str] = None,
         AES_nonce: Optional[str] = None,
@@ -194,7 +194,7 @@ class Client:
 
     def update_signature(
         self,
-        signature: auth.SignatureAuthorization,
+        signature: auth.SignatureCredentials,
         new_value: Optional[str] = None,
         new_description: Optional[str] = None,
         new_key: Optional[str] = None,
@@ -212,7 +212,7 @@ class Client:
         return models.Signature(**resp)
 
     def get_signature(self, uuid: str) -> models.Signature:
-        resp = self._api_request("get", f"/signature/{uuid}", query_params={"uuid": uuid})
+        resp = self._api_request("get", f"/signature/{uuid}")
         return models.Signature(**resp)
 
     def node(self) -> models.Node:
