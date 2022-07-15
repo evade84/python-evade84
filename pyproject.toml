@@ -1,14 +1,14 @@
 [project]
 name = "evade84"
-version = "0.1.0"
-description = "evade84-node API client"
+version = "0.0.1"
+description = "API client for evade84-node"
 authors = [
-    {name = "jieggii", email = "jieggii.contact@gmail.com"},
+    {name = "jieggii", email = "jieggii@pm.me"},
 ]
 dependencies = [
     "requests>=2.28.1",
     "pydantic>=1.9.1"]
-requires-python = ">=3.10"
+requires-python = ">=3.8"
 readme = "README.md"
 license = {text = "MIT"}
 [project.optional-dependencies]

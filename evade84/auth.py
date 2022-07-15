@@ -1,4 +1,4 @@
-class SignatureAuthorization:
+class SignatureAuthorizationCredentials:
     uuid: str
     key: str
 
@@ -7,5 +7,5 @@ class SignatureAuthorization:
         self.key = key
         assert self.uuid and self.key, "Both uuid and key must be provided."
 
-    def dict(self):
+    def dict(self) -> dict:
         return {"uuid": self.uuid, "key": self.key}
