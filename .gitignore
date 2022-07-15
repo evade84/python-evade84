@@ -4,3 +4,4 @@ build
 dist
 .pdm.toml
 .idea/
+pdm.lock
