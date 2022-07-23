@@ -61,6 +61,6 @@ class Node(BaseModel):
     name: str
     description: str
     version: str
-    uptime: int
+    uptime_sec: int
     pools_count: int
     signatures_count: int
